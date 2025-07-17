@@ -16,18 +16,20 @@ class Main extends Component {
             <h2>{this.props.data.title}</h2>
             <p>{this.props.data.desc}</p>            
             <div className={className}>
-            <p>난이도:{this.props.data.difficulty}</p>            
-            <hr/>
-              <Button variant="secondary" className="btn-sm" onClick={()=>{
-               this.props.onChangeMode();
-            }}>Modify</Button>
-              <Button 
-                variant="danger" 
-                className="btn-sm" 
-                onClick={()=>{
-                  this.props.deleteForm(this.props.data.id);
-                }}
-              >Delete</Button>
+              <p>난이도: {this.props.data.difficulty}</p>            
+              <hr/>
+              <div className='d-flex gap-2 justify-content-end'>
+                <Button variant="secondary" className="btn-sm" onClick={()=>{
+                this.props.onChangeMode();
+              }}>Modify</Button>
+                <Button 
+                  variant="danger" 
+                  className="btn-sm" 
+                  onClick={()=>{
+                    this.props.deleteForm(this.props.data.id);
+                  }}
+                >Delete</Button>
+              </div>
             </div>
           </article>
         </main> 

@@ -14,7 +14,7 @@ class Create extends Component {
         // console.log(e.target.title.value);
         //debugger;
         //console.log(document.querySelector('#title').value);
-        this.props.createForm(e.target.title.value, e.target.desc.value, e.target.difficulty.value);
+        this.props.createForm(e.target.title.value,e.target.desc.value, e.target.difficulty.value);
        }}>        
         <Form.Group className="mb-3" controlId="title">
           <Form.Label>Title</Form.Label>
@@ -26,7 +26,7 @@ class Create extends Component {
         </Form.Group>
         <Form.Group className="mb-3" controlId="difficulty">
           <Form.Label>difficulty</Form.Label>
-          <Form.Control type="number" min="0" max="10"  name="difficulty"/>
+          <Form.Control type="number" min="0" max="10" name="difficulty" />
         </Form.Group>
         <Button type="submit" variant="secondary">입력</Button>
       </Form>

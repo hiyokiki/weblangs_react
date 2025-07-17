@@ -17,7 +17,7 @@ class App extends Component {
       selected_id:0,
       max_id:3,
       subject:{title:'React', desc:'Single page application'},
-      welcome:{title:'Welcome', desc:'Welcome to React',},
+      welcome:{title:'Welcome', desc:'Welcome to React'},
       menus:[
         {id:1, title:'HTML', desc:'Hypertext markup language', difficulty: 1},
         {id:2, title:'CSS', desc:'CSS is for Design', difficulty: 2},
@@ -35,7 +35,7 @@ class App extends Component {
       _main = 
       <Main 
         data={this.getReadArticle()} 
-        onChangeMode={(title, desc ,difficulty )=>{
+        onChangeMode={(title, desc)=>{
           this.setState({
             mode:'modify'
           });
@@ -67,12 +67,12 @@ class App extends Component {
       }     
       */
     } else if(mode === 'create'){
-      _main = <Create createForm={(title,desc,difficulty)=>{
-        console.log(title, desc);
-      let new_max_id=  this.state.max_id = this.state.max_id + 1;
+      _main = <Create createForm={(title,desc, difficulty)=>{
+
+        let new_max_id = this.state.max_id + 1;
 
         let _menus =  this.state.menus.concat(
-          {id:new_max_id, title:title, desc:desc , difficulty:difficulty}
+          {id:new_max_id, title:title, desc:desc, difficulty: difficulty}
         )
         this.setState({
           mode:'welcome',
@@ -83,7 +83,7 @@ class App extends Component {
     }else if(mode === 'modify'){
       _main = <Modify 
         data={this.getReadArticle()} 
-        modifyForm={(title,desc, difficulty )=>{
+        modifyForm={(title,desc,difficulty)=>{
           
           //메뉴 내용 수정
           let _menus = this.state.menus.map(m =>           

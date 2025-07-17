@@ -23,7 +23,7 @@ class Modify extends Component {
         <h2>Modify Article</h2>
        <Form action="#" onSubmit={(e)=>{
         e.preventDefault();
-        this.props.modifyForm(e.target.title.value,e.target.desc.value,e.target.difficulty.value);
+        this.props.modifyForm(e.target.title.value,e.target.desc.value, e.target.difficulty.value);
        }}>        
         <Form.Group className="mb-3" controlId="title">
           <Form.Label>Title</Form.Label>
@@ -47,8 +47,11 @@ class Modify extends Component {
         </Form.Group>
         <Form.Group className="mb-3" controlId="difficulty">
           <Form.Label>difficulty</Form.Label>
-          <Form.Control type="number" min="0" max="10"  name="difficulty" value={this.state.difficulty}
-          onChange={this.inputFormHandler}/>
+          <Form.Control 
+           type="number" min="0" max="10" name="difficulty" 
+           value={this.state.difficulty}  
+           onChange={this.inputFormHandler}
+          />
         </Form.Group>
         <Button type="submit" variant="secondary">입력</Button>
       </Form>
