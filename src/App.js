@@ -69,14 +69,15 @@ class App extends Component {
     } else if(mode === 'create'){
       _main = <Create createForm={(title,desc,difficulty)=>{
         console.log(title, desc);
-        this.state.max_id = this.state.max_id + 1;
+      let new_max_id=  this.state.max_id = this.state.max_id + 1;
 
         let _menus =  this.state.menus.concat(
-          {id:this.state.max_id, title:title, desc:desc , difficulty:difficulty}
+          {id:new_max_id, title:title, desc:desc , difficulty:difficulty}
         )
         this.setState({
           mode:'welcome',
-          menus:_menus
+          menus:_menus,
+          max_id:new_max_id
         });
       }}/>;
     }else if(mode === 'modify'){
